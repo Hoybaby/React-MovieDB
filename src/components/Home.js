@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 // API
 
@@ -38,7 +38,14 @@ const Home = () => {
         } catch(error) {
             setError(true);
         }
-    }
+    };
+
+    // initial render will tak effect here
+    useEffect(() => {
+        // fetch first page of movies
+        fetchMovies(1)
+        // empty dependency arry will only launch the first render
+    }, [])
 
     return <div>
         Home Page
