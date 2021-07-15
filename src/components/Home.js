@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 
+// API
+
+import API from '../API'
+
 // configuration
 
 import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config'
@@ -18,7 +22,23 @@ const Home = () => {
 
     const [loading, setLoading] = useState(false);
 
+    // will handle error from api if one occurs
     const [error, setError] = useState(false);
+
+    // we have  an async function because we are going to fetch from the API and wait for the reponse
+    const fetchMovies = async(page, searchTerm = '') => {
+        try {
+            setError(false);
+            // since error is false, that means we the data be loading which is why we using setLoading
+            setLoading(true);
+
+            // this is being retrieved from the API.js
+            const movies = await API.fetchMovies(searchTerm, page);
+            console.log(movies)
+        } catch(error) {
+            setError(true);
+        }
+    }
 
     return <div>
         Home Page
