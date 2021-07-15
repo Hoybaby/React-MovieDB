@@ -2,7 +2,7 @@
 import { createGlobalStyle } from "styled-components";
 
 // inside the temperate literal, we create our css
-export const createGlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     :root {
         --maxWidth: 1280px;
         --white: #fff;
@@ -31,13 +31,15 @@ export const createGlobalStyle = createGlobalStyle`
         }
 
         h3 {
-            
+            font-size: 1.1rem
+            font-weight: 600;
+
+        }
+
+        p {
+            font-size: 1 rem;
+            color: var(--white)
         }
     }
-
-
-
-
-
 
 `
