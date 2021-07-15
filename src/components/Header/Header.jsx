@@ -10,8 +10,10 @@ const Header = () => (
     <Wrapper>
         <Content>
             <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
-            <TMDBLogo src={TMDBLogo} alt='rmdb-logo'/>
+            <TMDBLogoImg src={TMDBLogo} alt='rmdb-logo'/>
         </Content>
     </Wrapper>
     
 )
+
+export default Header;
