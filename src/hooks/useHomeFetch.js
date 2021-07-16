@@ -1,23 +1,7 @@
-import React, {useState, useEffect} from 'react'
+// this will be a custom hook. files should always name the custom hook with useXXXX.
 
-// API
-
-import API from '../API'
-
-// configuration
-
-import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from '../config'
-
-// Hook
-
-
-// Image
-
-import NoImage from '../images/no_image.jpg';
-
-const Home = () => {
-
-
+export const useHomeFetch = () => {
+    
     const [state, setState] = useState();
 
     const [loading, setLoading] = useState(false);
@@ -58,12 +42,4 @@ const Home = () => {
         fetchMovies(1)
         // empty dependency arry will only launch the first render
     }, [])
-
-        console.log(state);
-    return <div>
-        Home Page
-    </div>
 }
-
-
-export default Home
