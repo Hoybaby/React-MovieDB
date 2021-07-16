@@ -38,14 +38,14 @@ export const Text = styled.div`
     position: absolute;
     bottom: 40px;
     margin-right: 20px;
-    min-height: 100px
-    color: var(--white)
+    min-height: 100px;
+    color: var(--white);
 
     h1 {
-        font-size: var(--fontSuperBig)
+        font-size: var(--fontSuperBig);
 
         @media screen and (max-width: 720px) {
-            font-size(--fontBig)
+            font-size: var(--fontBig);
         }
     }
 

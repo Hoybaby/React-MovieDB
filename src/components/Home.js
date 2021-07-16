@@ -37,7 +37,8 @@ const Home = () => {
         <Grid header='Popular Movies'>
             {/* using map to go through the results array */}
             {state.results.map(movie=> (
-                <div>{movie.title}</div>
+                // had to add a key to avoid and error and make everything specific.
+                <div key={movie.id}>{movie.title}</div>
             ))}
 
         </Grid>
