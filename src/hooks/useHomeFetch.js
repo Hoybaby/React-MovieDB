@@ -1,8 +1,20 @@
 // this will be a custom hook. files should always name the custom hook with useXXXX.
+// since we dont have JSX, we dont need to import React
+
+import API from '../API'
+
+import {useState, useEffect, useRef} from 'react'
+
+const initialState = {
+    page: 0,
+    results: [],
+    total_pages: 0,
+    total_results: 0
+}
 
 export const useHomeFetch = () => {
     
-    const [state, setState] = useState();
+    const [state, setState] = useState(initialState);
 
     const [loading, setLoading] = useState(false);
 
@@ -42,4 +54,7 @@ export const useHomeFetch = () => {
         fetchMovies(1)
         // empty dependency arry will only launch the first render
     }, [])
+
+    // this is es6 syntax. this will automically gain the property of state
+    return {state, loading, error}
 }
