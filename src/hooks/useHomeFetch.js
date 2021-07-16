@@ -21,6 +21,8 @@ export const useHomeFetch = () => {
     // will handle error from api if one occurs
     const [error, setError] = useState(false);
 
+    const [searchTerm, setSearchTerm] = useState('')
+
     // we have  an async function because we are going to fetch from the API and wait for the reponse
     const fetchMovies = async(page, searchTerm = '') => {
         try {

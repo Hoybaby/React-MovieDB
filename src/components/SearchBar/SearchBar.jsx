@@ -13,12 +13,18 @@ import searchIcon from '../../images/search-icon.svg'
 
 // destructing a prop again
 const SearchBar = ({setSearchTerm}) => {
+
+    const [state,setState] = useState('')
+
     return(
         <Wrapper>
             <Content>
                 <img src={searchIcon} alt='search-icon'></img>
                 <input type="text" 
                 placeholder='Search Movie'
+                // this will give us the value in the input field
+                onChange={event => setState(event.currentTarget.value)}
+                value={state}
                 />
             </Content>
         </Wrapper>
