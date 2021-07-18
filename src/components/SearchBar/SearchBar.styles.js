@@ -33,12 +33,17 @@ export const Content = styled.div`
         position: absolute;
         left: 0;
         margin: 8px 0;
-        padding: 0, 0,0, 60px;
+        padding: 0 0 0 60px;
         border: 0;
         width: 95%;
         background: transparent;
         height: 40px;
-        color: var(--white)
+        color: var(--white);
+
+
+        :focus {
+            outline: none;
+        }
     }
 `;
 
