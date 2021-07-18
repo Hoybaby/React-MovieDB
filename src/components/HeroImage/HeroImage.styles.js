@@ -45,7 +45,7 @@ export const Text = styled.div`
         font-size: var(--fontSuperBig);
 
         @media screen and (max-width: 720px) {
-            font-size: var(--fontBig);
+            font-size: (--fontBig);
         }
     }
 
@@ -55,10 +55,6 @@ export const Text = styled.div`
         @media screen and (max-width: 720px) {
             font-size: var(--fontSmall);
         }
-    }
-
-    @media screen and (max-width: 720px) {
-        max-width: 100%
     }
 `;
 
