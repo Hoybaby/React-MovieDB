@@ -21,6 +21,7 @@ export const useHomeFetch = () => {
     // will handle error from api if one occurs
     const [error, setError] = useState(false);
 
+    // 
     const [searchTerm, setSearchTerm] = useState('')
 
     // we have  an async function because we are going to fetch from the API and wait for the reponse
@@ -58,5 +59,5 @@ export const useHomeFetch = () => {
     }, [])
 
     // this is es6 syntax. this will automically gain the property of state
-    return {state, loading, error}
+    return {state, loading, error, setSearchTerm}
 }

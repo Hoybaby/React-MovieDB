@@ -22,7 +22,7 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const {state, loading, error} = useHomeFetch();
+    const {state, loading, error, setSearchTerm} = useHomeFetch();
 
     
 
@@ -37,7 +37,8 @@ const Home = () => {
         text={state.results[0].overview}
         /> : null
         }
-        <SearchBar/>
+        {/* this is so we can pass it down to our component, so that we can use it in the search bar. It will change the state in the hook when we fetch things*/}
+        <SearchBar setSearchTerm={setSearchTerm}/>
         <Grid header='Popular Movies'>
             {/* using map to go through the results array */}
             {state.results.map(movie => (

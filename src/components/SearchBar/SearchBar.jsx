@@ -14,7 +14,15 @@ import searchIcon from '../../images/search-icon.svg'
 // destructing a prop again
 const SearchBar = ({setSearchTerm}) => {
 
-    const [state,setState] = useState('')
+    const [state, setState] = useState('')
+
+    useEffect(() => {
+
+        // creating a timer to make a little delay from when user inputs a field to the data getting the results
+        const timer = setTimeout(()=> {
+            setSearchTerm(state);
+        }, 500)
+    }, [])
 
     return(
         <Wrapper>
