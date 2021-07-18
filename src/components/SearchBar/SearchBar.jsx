@@ -16,13 +16,23 @@ const SearchBar = ({setSearchTerm}) => {
 
     const [state, setState] = useState('')
 
+    // since this is being used with a useRef, it wont be rerender and is mutuable
+    const initial = useRef(true);
+    
+
     useEffect(() => {
 
+        if(initial.current) {
+            initial.current = false;
+            return;
+        }
         // creating a timer to make a little delay from when user inputs a field to the data getting the results
         const timer = setTimeout(()=> {
             setSearchTerm(state);
         }, 500)
-    }, [])
+        // I need to return this function because if you dont, there will be a lot of timers because of the rerenders
+        return() => clearTimeout(timer)
+    }, [setSearchTerm, state])
 
     return(
         <Wrapper>

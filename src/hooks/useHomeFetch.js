@@ -24,6 +24,8 @@ export const useHomeFetch = () => {
     // 
     const [searchTerm, setSearchTerm] = useState('')
 
+    console.log(searchTerm)
+
     // we have  an async function because we are going to fetch from the API and wait for the reponse
     const fetchMovies = async(page, searchTerm = '') => {
         try {
