@@ -22,7 +22,7 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const {state, loading, error, setSearchTerm} = useHomeFetch();
+    const {state, loading, error, setSearchTerm, searchTerm} = useHomeFetch();
 
     
 
@@ -30,7 +30,7 @@ const Home = () => {
     return <div>
         {/* this component needs to get the title, and text so it needs to be passed a prop */}
         {/* this code means that is state.results is true, it will also run the component HeroImage */}
-        {state.results[0] ?
+        {!searchTerm && state.results[0] ?
         <HeroImage
         image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
         title={state.results[0].original_title}

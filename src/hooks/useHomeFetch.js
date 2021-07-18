@@ -53,13 +53,14 @@ export const useHomeFetch = () => {
         setLoading(false)
     };
 
-    // initial render will tak effect here
+    // initial render will take effect here. 7/18 now i am going to apply the search to this useEffect
     useEffect(() => {
-        // fetch first page of movies
-        fetchMovies(1)
-        // empty dependency arry will only launch the first render
-    }, [])
+        // fetch first page of movies.  7/18 to wipe out state everytime we search, we do setState
+        setState(initialState)
+        fetchMovies(1, searchTerm)
+        // empty dependency arry will only launch the first render. Now with searchTerm, the useEffect will trigger when searchTerm changes
+    }, [searchTerm])
 
     // this is es6 syntax. this will automically gain the property of state
-    return {state, loading, error, setSearchTerm}
+    return {state, loading, error, setSearchTerm, searchTerm}
 }
