@@ -39,7 +39,7 @@ const Home = () => {
         }
         {/* this is so we can pass it down to our component, so that we can use it in the search bar. It will change the state in the hook when we fetch things*/}
         <SearchBar setSearchTerm={setSearchTerm}/>
-        <Grid header='Popular Movies'>
+        <Grid header={searchTerm? 'Search Result' :'Popular Movies'}>
             {/* using map to go through the results array */}
             {state.results.map(movie => (
                 // had to add a key to avoid and error and make everything specific.
