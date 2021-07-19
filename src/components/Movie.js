@@ -7,7 +7,8 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 
 // componenets
 import Grid from './Grid/Grid';
-import { Spinner } from './Spinner/Spinner';
+import Spinner from './Spinner/Spinner';
+import BreadCrumb from './BreadCrumb/Breadcrumb';
 
 // Hook
 import { useMovieFetch } from '../hooks/useMovieFetch';
@@ -21,11 +22,14 @@ const Movie = () => {
 
     const {state: movie, loading, error} = useMovieFetch(movieId)
 
-    console.log(movie)
+    if(loading) return <Spinner/>;
+    if(error) return <div>something went wrong...</div>;
 
     return(
         <div>
-            <div>Movie Page</div>
+
+            <BreadCrumb movieTitle={movie.original_title}/>
+            
         </div>
     )
 }
