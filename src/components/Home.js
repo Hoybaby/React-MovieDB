@@ -39,6 +39,7 @@ const Home = () => {
         }
         {/* this is so we can pass it down to our component, so that we can use it in the search bar. It will change the state in the hook when we fetch things*/}
         <SearchBar setSearchTerm={setSearchTerm}/>
+        {/* created this ternary operator to say, Hey! if there is a search term, show search Result instead of Popular Movies which it should. */}
         <Grid header={searchTerm? 'Search Result' :'Popular Movies'}>
             {/* using map to go through the results array */}
             {state.results.map(movie => (
