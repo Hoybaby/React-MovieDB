@@ -12,6 +12,7 @@ import Grid from './Grid/Grid';
 import Thumb from './Thumb/Thumb'
 import Spinner from './Spinner/Spinner';
 import SearchBar from './SearchBar/SearchBar';
+import Button from './Button/Button'
 
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -22,11 +23,11 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const {state, loading, error, setSearchTerm, searchTerm} = useHomeFetch();
-
-    
+    const {state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore} = useHomeFetch();
 
     console.log(state);
+    if(error) return <div>Something went wrong</div>
+
     return <div>
         {/* this component needs to get the title, and text so it needs to be passed a prop */}
         {/* this code means that is state.results is true, it will also run the component HeroImage */}
@@ -56,7 +57,11 @@ const Home = () => {
                 />
             ))}
         </Grid>
-        <Spinner/>
+        {loading && <Spinner/>}
+        {/* this basically says that is the state page is less than the amount of pages we have loaded, then show button. if not spinner will show */}
+        {state.page < state.total_pages && !loading && (
+            <Button text='Load More' callback={()=> setIsLoadingMore(true)}/>
+        )}
     </div>
 }
 
