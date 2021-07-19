@@ -12,6 +12,7 @@ import Grid from './Grid/Grid';
 import Thumb from './Thumb/Thumb'
 import Spinner from './Spinner/Spinner';
 import SearchBar from './SearchBar/SearchBar';
+import Button from './Button/Button'
 
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -56,7 +57,11 @@ const Home = () => {
                 />
             ))}
         </Grid>
-        <Spinner/>
+        {loading && <Spinner/>}
+        {/* this basically says that is the state page is less than the amount of pages we have loaded, then show button. if not spinner will show */}
+        {state.page < state.total_pages && !loading && (
+            <Button text='Load More'/>
+        )}
     </div>
 }
 

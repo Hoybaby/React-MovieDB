@@ -8,3 +8,6 @@ const Button = ({text, callback}) => (
         {text}
     </Wrapper>
 )
+
+
+export default Button
