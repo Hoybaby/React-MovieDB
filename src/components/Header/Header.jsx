@@ -10,8 +10,10 @@ import { Wrapper, Content, LogoImg, TMDBLogoImg } from './Header.styles';
 const Header = () => (
     <Wrapper>
         <Content>
-            <Link to='/'></Link>
-            <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
+            <Link to='/'>
+                <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
+            </Link>
+            
             <TMDBLogoImg src={TMDBLogo} alt='rmdb-logo'/>
         </Content>
     </Wrapper>
