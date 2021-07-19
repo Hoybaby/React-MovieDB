@@ -23,11 +23,11 @@ import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
 
-    const {state, loading, error, setSearchTerm, searchTerm} = useHomeFetch();
-
-    
+    const {state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore} = useHomeFetch();
 
     console.log(state);
+    if(error) return <div>Something went wrong</div>
+
     return <div>
         {/* this component needs to get the title, and text so it needs to be passed a prop */}
         {/* this code means that is state.results is true, it will also run the component HeroImage */}

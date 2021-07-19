@@ -21,8 +21,9 @@ export const useHomeFetch = () => {
     // will handle error from api if one occurs
     const [error, setError] = useState(false);
 
-    // 
     const [searchTerm, setSearchTerm] = useState('')
+
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
 
     console.log(searchTerm)
 
@@ -62,5 +63,5 @@ export const useHomeFetch = () => {
     }, [searchTerm])
 
     // this is es6 syntax. this will automically gain the property of state
-    return {state, loading, error, setSearchTerm, searchTerm}
+    return {state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore}
 }
