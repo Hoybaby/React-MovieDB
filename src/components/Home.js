@@ -13,7 +13,7 @@ import Thumb from './Thumb/Thumb'
 import Spinner from './Spinner/Spinner';
 import SearchBar from './SearchBar/SearchBar';
 import Button from './Button/Button'
-import BreadCrumb from './BreadCrumb/Breadcrumb';
+
 
 // Hook
 import { useHomeFetch } from '../hooks/useHomeFetch';
