@@ -11,13 +11,18 @@ import Header from './components/Header/Header';
 import Home from './components/Home';
 
 
-function App() {
+const  App= () => {
   return (
-    <div className="App">
+    <Router>       
       <Header/>
-      <Home/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        
+      </Routes>
       <GlobalStyle/>
-    </div>
+    </Router>
+
+
   );
 }
 
