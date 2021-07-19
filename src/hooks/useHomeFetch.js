@@ -62,6 +62,16 @@ export const useHomeFetch = () => {
         // empty dependency arry will only launch the first render. Now with searchTerm, the useEffect will trigger when searchTerm changes
     }, [searchTerm])
 
+
+    // Load More useEffect. This will be mainly for the button. I am using state.page + 1 because we want the next page
+    useEffect(() => {
+        if(!isLoadingMore) return;
+        fetchMovies(state.page + 1, searchTerm)
+        setIsLoadingMore(false)
+
+
+    }, [isLoadingMore, state.page, searchTerm])
+
     // this is es6 syntax. this will automically gain the property of state
     return {state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore}
 }

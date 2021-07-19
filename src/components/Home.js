@@ -60,7 +60,7 @@ const Home = () => {
         {loading && <Spinner/>}
         {/* this basically says that is the state page is less than the amount of pages we have loaded, then show button. if not spinner will show */}
         {state.page < state.total_pages && !loading && (
-            <Button text='Load More'/>
+            <Button text='Load More' callback={()=> setIsLoadingMore(true)}/>
         )}
     </div>
 }
