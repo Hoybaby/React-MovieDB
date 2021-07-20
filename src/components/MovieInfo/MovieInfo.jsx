@@ -14,8 +14,25 @@ const MovieInfo = ({movie}) => (
     // passing in a prop
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
-            <Text>
+            <Thumb 
+            image={movie.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}` : NoImage}
+            // we dont want it to be clickable so we make it false.
+            clickable={false}
 
+            />
+            <Text>
+                <h1>{movie.title}</h1>
+                <h3>Synopsis</h3>
+                <p>{movie.overview}</p>
+
+                <div className='rating-directos'>
+                    <div>
+                        <h3>Rating</h3>
+                        <div className="score">
+                            {movie.vote_average}
+                        </div>
+                    </div>
+                </div>
             </Text>
         </Content>
     </Wrapper>
